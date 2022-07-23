@@ -1,38 +1,170 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.logo{
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  font-size: 3rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.471);
+  top: 0;
+  margin: 0;
+  padding: 1rem 0;
+}
+
+.matrix{
+  margin: auto;
+  margin-right: 4rem;
+  width: 24rem;
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+}
+
+@keyframes typing{
+  0%{transform: scale(1);}
+  50%{transform: scale(1.1);}
+  100%{transform: scale(1);}
+}
+
+.cell{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+  border: 2px solid black;
+  background-color: white;
+  margin: .2rem;
+  border-radius: 5%;
+  cursor: pointer;
+  font-size: 3rem;
+  font-weight: bold;
+  
+}
+.anim{
+  animation-name: typing;
+  animation-duration: .1s;
+  
+}
+
+@keyframes flip-correct{
+  0%{  background-color: white;}
+  50%{
+    background-color: white;
+    transform: rotate3d(1,0,0,90deg);
+    color: transparent;
+  }
+  100%{
+    color: white;
+    background-color: #2eb872;
+    transform: rotate3d(1,0,0,0deg)
+  }
+}
+@keyframes flip-different{
+  0%{  background-color: white;}
+  50%{
+    background-color: white;
+    transform: rotate3d(1,0,0,90deg);
+    color: transparent;
+  }
+  100%{
+    color: white;
+    background-color: #d9b650;
+    transform: rotate3d(1,0,0,0deg)
+  }
+}
+@keyframes flip-incorrect{
+  0%{  background-color: white;}
+  50%{
+    background-color: white;
+    transform: rotate3d(1,0,0,90deg);
+    color: transparent;
+  }
+  100%{
+    color: white;
+    background-color: #596e79;
+    transform: rotate3d(1,0,0,0deg)
+  }
+}
+
+.flip-correct{
+  background-color: white;
+  animation-name: flip-correct;
+  animation-duration: .5s;
+  animation-fill-mode:both;
+  animation-timing-function: linear;
+}
+.flip-different{
+  background-color: white;
+  animation-name: flip-different;
+  animation-duration: .5s;
+  animation-fill-mode:both;
+  animation-timing-function: linear;
+}
+.flip-incorrect{
+  background-color: white;
+  animation-name: flip-incorrect;
+  animation-duration: .5s;
+  animation-fill-mode:both;
+  animation-timing-function: linear;
+}
+
+.correct{
+  background-color: #2eb872;
+}
+
+.different{
+  background-color: #d9b650;
+}
+
+.incorrect{
+  background-color: #596e79;
+}
+
+.game-over{
+display: grid;
+grid-template-rows: repeat(3,20% 70% 10%);
+  position: absolute;
+  margin: auto;
+  width: 450px;
+  height: 600px;
+  background-color: white;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.093);
+  padding-bottom: .5rem;
+}
+.game-over h1{
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+}
+.attempts{
+  font-size: 2rem;
+  justify-self: center;
+  align-self: center;
+}
+
+.restart{
+  background-color: #385170;
+  margin: auto;
+  width: 90%;
+  height: 100%;
+  border: none;
+  border-radius: 3%;
+  font-size: 1.7rem;
   color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.restart:hover{
+  background-color: #142d4c;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hidden{
+  display: none;
 }
