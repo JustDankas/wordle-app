@@ -54,7 +54,7 @@ function App() {
       setRound(initRound)
       setWord(randomWord())
       setGameState('')
-      setChosenLetters(initLettersObj)
+      setChosenLetters({...initLettersObj})
   }
 
   function handleKeyPress(param){
