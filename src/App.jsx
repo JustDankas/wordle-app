@@ -54,7 +54,11 @@ function App() {
       setRound(initRound)
       setWord(randomWord())
       setGameState('')
-      setChosenLetters({...initLettersObj})
+      const dummyLettersObj = {}
+      lettersArray.forEach((letter)=>letter=='Enter' || letter=='Backspace'?
+      dummyLettersObj[letter]=letter:dummyLettersObj[letter]='undefined')
+
+      setChosenLetters(Object.assign(dummyLettersObj))
   }
 
   function handleKeyPress(param){
