@@ -1,7 +1,7 @@
 {
   "homepage": "https://JustDankas.github.io/wordle-app",
   "name": "textle",
-  "version": "0.4.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",

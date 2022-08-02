@@ -165,8 +165,10 @@ function App() {
   return (
     <div className="App">
       <h1 className='logo'>Textle</h1>
-      <div className="matrix">
-        {renderMatrix}
+      <div className="matrix-c">
+        <div className="matrix">
+          {renderMatrix}
+        </div>
       </div>
       <div className="letters-c">
         {lettersRowArray.map((row)=>(
