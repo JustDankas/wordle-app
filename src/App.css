@@ -1,44 +1,49 @@
 .App {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 
   position: relative;
 }
 
-.logo{
+.logo {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
-  width: 100%;
+  /* position: fixed; */
+  width: 100vw;
   font-size: 3rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.471);
   top: 0;
   margin: 0;
-  margin-left: 1rem;
+  margin-bottom: 5%;
   padding: 1rem 0;
+  /* background-color: red; */
 }
 
-.matrix{
-
-  
+.matrix {
   display: grid;
-  grid-template-columns: repeat(5,5rem);
+  grid-template-columns: repeat(5, 5rem);
   margin-left: 0;
   margin-right: 0;
   justify-content: center;
   gap: 0 1rem;
 }
 
-@keyframes typing{
-  0%{transform: scale(1);}
-  50%{transform: scale(1.1);}
-  100%{transform: scale(1);}
+@keyframes typing {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
-.cell{
+.cell {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,86 +51,88 @@
   height: 5rem;
   border: 2px solid black;
   background-color: white;
-  margin: .2rem;
+  margin: 0.2rem;
   border-radius: 5%;
   cursor: pointer;
   font-size: 3rem;
   font-weight: bold;
-  
 }
-.anim{
+.anim {
   animation-name: typing;
-  animation-duration: .1s;
-  
+  animation-duration: 0.1s;
 }
 
-@keyframes flip-correct{
-  0%{  background-color: white;}
-  50%{
+@keyframes flip-correct {
+  0% {
     background-color: white;
-    transform: rotate3d(1,0,0,90deg);
+  }
+  50% {
+    background-color: white;
+    transform: rotate3d(1, 0, 0, 90deg);
     color: transparent;
   }
-  100%{
+  100% {
     color: white;
     background-color: #2eb872;
-    transform: rotate3d(1,0,0,0deg)
+    transform: rotate3d(1, 0, 0, 0deg);
   }
 }
-@keyframes flip-different{
-  0%{  background-color: white;}
-  50%{
+@keyframes flip-different {
+  0% {
     background-color: white;
-    transform: rotate3d(1,0,0,90deg);
+  }
+  50% {
+    background-color: white;
+    transform: rotate3d(1, 0, 0, 90deg);
     color: transparent;
   }
-  100%{
+  100% {
     color: white;
     background-color: #d9b650;
-    transform: rotate3d(1,0,0,0deg)
+    transform: rotate3d(1, 0, 0, 0deg);
   }
 }
-@keyframes flip-incorrect{
-  0%{  background-color: white;}
-  50%{
+@keyframes flip-incorrect {
+  0% {
     background-color: white;
-    transform: rotate3d(1,0,0,90deg);
+  }
+  50% {
+    background-color: white;
+    transform: rotate3d(1, 0, 0, 90deg);
     color: transparent;
   }
-  100%{
+  100% {
     color: white;
     background-color: #596e79;
-    transform: rotate3d(1,0,0,0deg)
+    transform: rotate3d(1, 0, 0, 0deg);
   }
 }
 
-.flip-correct{
+.flip-correct {
   background-color: white;
   animation-name: flip-correct;
-  animation-duration: .5s;
-  animation-fill-mode:both;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
   animation-timing-function: linear;
 }
-.flip-different{
+.flip-different {
   background-color: white;
   animation-name: flip-different;
-  animation-duration: .5s;
-  animation-fill-mode:both;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
   animation-timing-function: linear;
 }
-.flip-incorrect{
+.flip-incorrect {
   background-color: white;
   animation-name: flip-incorrect;
-  animation-duration: .5s;
-  animation-fill-mode:both;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
   animation-timing-function: linear;
 }
 
-
-
-.game-over{
+.game-over {
   display: grid;
-  grid-template-rows: repeat(3,20% 70% 10%);
+  grid-template-rows: repeat(3, 20% 70% 10%);
   position: absolute;
   margin-bottom: 15rem;
   width: 30rem;
@@ -133,21 +140,22 @@
   background-color: white;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.093);
   padding: 0 1rem;
-  padding-bottom: .5rem;
+  padding-bottom: 0.5rem;
 }
-.game-over h1{
+.game-over h1 {
   display: flex;
   justify-content: center;
   font-size: 3rem;
 }
-.attempts,.word{
+.attempts,
+.word {
   font-size: 2rem;
   justify-self: center;
   align-self: center;
   margin-left: 1rem;
 }
 
-.restart{
+.restart {
   background-color: #385170;
   margin: auto;
   width: 90%;
@@ -159,31 +167,33 @@
   font-weight: bold;
   cursor: pointer;
 }
-.restart:hover{
+.restart:hover {
   background-color: #142d4c;
 }
 
-.hidden{
+.hidden {
   display: none;
 }
-.letters-c{
+.letters-c {
   margin-top: 5rem;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.row-c{
+.row-c {
   display: flex;
   flex-direction: row;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
-.letter,.enter-btn,.backspace-btn{
+.letter,
+.enter-btn,
+.backspace-btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 .2rem;
+  margin: 0 0.2rem;
   font-size: 2.5rem;
   width: 3rem;
   height: 4rem;
@@ -193,127 +203,132 @@ align-items: center;
   background-color: #d7dde1;
 }
 
-.correct{
+.correct {
   background-color: #2eb872;
   color: #fff;
 }
 
-.different{
+.different {
   background-color: #d9b650;
   color: #fff;
 }
 
-.incorrect{
+.incorrect {
   background-color: #596e79;
   color: #fff;
 }
 
-.enter-btn{
+.enter-btn {
   padding: 0 3.5rem;
 }
 
-@media screen and (max-width:1920px) {
-  .logo{
+@media screen and (max-width: 1920px) {
+  .logo {
     font-size: 3rem;
   }
 
-  .matrix{
-    grid-template-columns: repeat(5,4rem);
+  .matrix {
+    grid-template-columns: repeat(5, 4rem);
   }
 
-  .cell{
+  .cell {
     width: 4rem;
     height: 4rem;
     font-size: 2.5rem;
   }
 
-  .game-over{
+  .game-over {
     width: 25rem;
     height: 32rem;
   }
-  .game-over h1{
+  .game-over h1 {
     font-size: 2.5rem;
   }
-  .letter,.enter-btn,.backspace-btn{
+  .letter,
+  .enter-btn,
+  .backspace-btn {
     font-size: 2rem;
     width: 2.5rem;
     height: 3.5rem;
   }
 }
-@media screen and (max-width:1300px) {
-
-  .logo{
+@media screen and (max-width: 1300px) {
+  .logo {
     font-size: 2rem;
-    padding: .5rem 0;
+    padding: 0.5rem 0;
   }
-  .matrix{
-    grid-template-columns: repeat(5,3rem);
-    gap: 0 .5rem;
+  .matrix {
+    grid-template-columns: repeat(5, 3rem);
+    gap: 0 0.5rem;
   }
 
-  .cell{
+  .cell {
     width: 2.5rem;
     height: 2.5rem;
     font-size: 2rem;
   }
 
-  .game-over{
+  .game-over {
     width: 20rem;
     height: 24rem;
     margin-bottom: 10rem;
   }
-  .game-over h1{
+  .game-over h1 {
     font-size: 2rem;
   }
 
-  .letter,.enter-btn,.backspace-btn{
+  .letter,
+  .enter-btn,
+  .backspace-btn {
     font-size: 1.5rem;
     width: 2rem;
     height: 2.5rem;
   }
-  .enter-btn{
+  .enter-btn {
     padding: 0 3rem;
   }
 }
 
-@media screen and (max-width:500px) {
-
-  .logo{
+@media screen and (max-width: 500px) {
+  .logo {
     font-size: 1.5rem;
   }
-  .matrix{
-    grid-template-columns: repeat(5,2.5rem);
-    gap: 0 .5rem;
+  .matrix {
+    grid-template-columns: repeat(5, 2.5rem);
+    gap: 0 0.5rem;
   }
 
-  .cell{
+  .cell {
     width: 2.5rem;
     height: 2.5rem;
     font-size: 2rem;
   }
 
-  .game-over{
+  .game-over {
     width: 15rem;
     height: 20rem;
     margin-bottom: 13rem;
   }
-  .game-over h1{
+  .game-over h1 {
     font-size: 1.5rem;
   }
-  .attempts,.word{
+  .attempts,
+  .word {
     font-size: 1.5rem;
   }
 
-  .restart{
+  .restart {
     font-size: 1.4rem;
   }
-  .letter,.enter-btn,.backspace-btn{
+  .letter,
+  .enter-btn,
+  .backspace-btn {
     font-size: 1.5rem;
     width: 1.8rem;
     height: 2.4rem;
-    margin: 0 .1rem;
+    margin: 0 0.1rem;
   }
-  .enter-btn{
+  .enter-btn {
     padding: 0 2.5rem;
   }
 }
